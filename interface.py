@@ -5,8 +5,8 @@
 
 def list_images(db, n, usernick=None):
     """Return a list of dictionaries for the first 'n' images in
-    order of timestamp. Each dictionary will contain keys 'filename', 'timestamp', 'user' and 'comments'.
-    The 'comments' value will be a list of comments associated with this image (as returned by list_comments).
+    order of timestamp. Each dictionary will contain keys 'filename', 'timestamp', 'user' and 'likes'.
+    The 'likes' value will be a count of the number of likes for this image as returned by count_likes.
     If usernick is given, then only images belonging to that user are returned."""
 
 
