@@ -51,8 +51,6 @@ class Level2UnitTests(unittest.TestCase):
             likes = [img[3] for img in self.images if img[0] == image['filename']]
             self.assertEqual(len(likes[0])+1, image['likes'])
 
-
-
     def test_add_image(self):
         """Test that add_image updates the database properly"""
 
@@ -64,11 +62,10 @@ class Level2UnitTests(unittest.TestCase):
 
         self.assertEqual(imagename, images[0]['filename'], 'wrong image name after add_image')
         self.assertEqual(usernick, images[0]['user'], 'wrong user in first image')
-        # date should be today's
-        today = datetime.datetime.today().strftime("%Y-%m-%d")
+        # date should be today's date in UTC to match SQLite
+        today = datetime.datetime.utcnow().strftime("%Y-%m-%d")
         date = images[0]['timestamp']
         self.assertEqual(date[:10], today)
-
 
     def test_count_likes(self):
         """Test that count_likes correctly counts the likes for an image"""
