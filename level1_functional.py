@@ -7,12 +7,18 @@ import unittest
 from webtest import TestApp
 import main
 import bottle
+from database import COMP249Db
 
 class Level1FunctionalTests(unittest.TestCase):
 
     def setUp(self):
-        self.app = TestApp(main.application)
         bottle.debug() # force debug messages in error pages returned by webtest
+
+        self.app = TestApp(main.application)
+        self.db = COMP249Db()
+        self.db.create_tables()
+        self.db.sample_data()
+
 
     def tearDown(self):
         pass
