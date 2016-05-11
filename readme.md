@@ -7,3 +7,8 @@ which contains a copy of the assignment requirements. There is also a copy inclu
 here for reference.  
 
 Please contact Steve Cassidy if you have questions.
+
+Updated: Solution to Level 1 and 2
+----------------------------------
+
+This project now contains a solution for the Level 1 and 2 requirements.
